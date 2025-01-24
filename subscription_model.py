@@ -1,6 +1,6 @@
 from mongoengine import Document,StringField,ReferenceField,ValidationError
-from Models.course_model import Course
-from Models.year_model import Year
+from course_model import Course
+from year_model import Year
 
 class Subscription(Document):
     course = ReferenceField(Course,required=True,reverse_delete_rule=2)

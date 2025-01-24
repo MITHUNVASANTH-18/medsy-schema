@@ -1,5 +1,5 @@
 from mongoengine import Document,StringField,ReferenceField,ValidationError,DateTimeField
-from Models.course_model import Course
+from course_model import Course
 
 class Coupon(Document):
     course = ReferenceField(Course,required=True,reverse_delete_rule=2)

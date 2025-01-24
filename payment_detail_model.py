@@ -1,7 +1,7 @@
 from mongoengine import ReferenceField,Document,StringField
-from Models.user_model import User
-from Models.user_subscription_model import User_subscription
-from Models.transaction_detail_model import Transaction_detail
+from user_model import User
+from user_subscription_model import User_subscription
+from transaction_detail_model import Transaction_detail
 
 class Payment_detail(Document):
     user = ReferenceField(User,required=True,reverse_delete_rule=2)
