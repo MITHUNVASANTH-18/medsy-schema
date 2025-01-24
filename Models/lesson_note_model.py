@@ -1,10 +1,10 @@
 from mongoengine import Document,ReferenceField,DictField
-from course_model import Course
-from layer_1_model import Layer_1
-from subject_model import Subject
-from layer_2_model import Layer_2
-from layer_3_model import Layer_3
-from year_model import Year
+from Models.course_model import Course
+from Models.layer_1_model import Layer_1
+from Models.subject_model import Subject
+from Models.layer_2_model import Layer_2
+from Models.layer_3_model import Layer_3
+from Models.year_model import Year
 
 class Lesson_note(Document):
     course = ReferenceField(Course,required=True,reverse_delete_rule=2)

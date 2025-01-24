@@ -1,8 +1,8 @@
 from mongoengine import Document,StringField,ReferenceField,DictField
-from course_model import Course
-from subject_model import Subject
-from layer_1_model import Layer_1
-from year_model import Year
+from Models.course_model import Course
+from Models.subject_model import Subject
+from Models.layer_1_model import Layer_1
+from Models.year_model import Year
 
 class Flashcard(Document):
     course = ReferenceField(Course,required=True,reverse_delete_rule=2)

@@ -1,6 +1,6 @@
 from mongoengine import Document,ReferenceField,IntField
-from course_model import Course
-from user_model import User
+from Models.course_model import Course
+from Models.user_model import User
 
 class Coin(Document):
     course = ReferenceField(Course,required=True,reverse_delete_rule=2)

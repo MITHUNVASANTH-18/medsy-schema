@@ -1,11 +1,12 @@
 from mongoengine import Document,ReferenceField,DictField
-from component_model import Component
-from layer_1_model import Layer_1
-from layer_2_model import Layer_2
-from layer_3_model import Layer_3
-from model_model import Model
-from subject_model import Subject
-from year_model import Year
+from Models.component_model import Component
+from Models.course_model import Course
+from Models.layer_1_model import Layer_1
+from Models.layer_2_model import Layer_2
+from Models.layer_3_model import Layer_3
+from Models.model_model import Model
+from Models.subject_model import Subject
+from Models.year_model import Year
 
 
 class Prompt(Document):

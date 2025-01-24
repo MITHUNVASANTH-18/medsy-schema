@@ -1,6 +1,6 @@
 from mongoengine import ReferenceField,Document,StringField,DateTimeField
-from user_model import User
-from user_subscription_model import User_subscription
+from Models.user_model import User
+from Models.user_subscription_model import User_subscription
 from datetime import datetime
 
 class Transaction_detail(Document):

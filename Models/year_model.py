@@ -1,5 +1,5 @@
 from mongoengine import Document,StringField,BooleanField,ValidationError,ReferenceField
-from course_model import Course
+from Models.course_model import Course
 
 class Year(Document):
     course = ReferenceField(Course,required=True,reverse_delete_rule=2)

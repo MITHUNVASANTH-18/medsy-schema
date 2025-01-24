@@ -1,6 +1,6 @@
 from mongoengine import ReferenceField,Document,BooleanField
-from flashcard_model import Flashcard
-from user_model import User
+from Models.flashcard_model import Flashcard
+from Models.user_model import User
 
 class Flashcard_queue(Document):
     flashcard = ReferenceField(Flashcard,required=True,reverse_delete_rule=2)
