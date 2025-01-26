@@ -2,7 +2,7 @@ from mongoengine import Document, ReferenceField, StringField,DateTimeField
 from datetime import datetime
 from Models.user_model import User
 
-class User(Document):
+class Self_note(Document):
     user = ReferenceField(User,required=True,reverse_delete_rule=2)
     title = StringField(required=True)
     notes_content = StringField(required=True)
