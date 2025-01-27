@@ -9,6 +9,7 @@ class User(Document):
     username = StringField(required=True)
     email = StringField(required=True, unique=True, regex=r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$')
     password = StringField(required=True)
+    auth_token = StringField()
 
     def clean(self):
         if not re.match(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$', self.password):
