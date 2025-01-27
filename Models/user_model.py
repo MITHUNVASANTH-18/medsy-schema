@@ -7,13 +7,14 @@ class User(Document):
     course = ReferenceField(Course, required=True, reverse_delete_rule=2)
     year = ReferenceField(Year, required=True, reverse_delete_rule=2)
     username = StringField(required=True)
-    email = StringField(required=True, unique=True, regex=r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$')
+    email = StringField(required=True, unique=True)
     password = StringField(required=True)
     auth_token = StringField()
 
     def clean(self):
-        if not re.match(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$', self.password):
-            raise ValueError("Password must be at least 8 characters long and include at least one letter and one number.")
+        if not re.match(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$', self.email):
+            raise ValueError("Enter a Valid mail")
+
 
     def to_json(self):
         return {

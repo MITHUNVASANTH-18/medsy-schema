@@ -13,7 +13,7 @@ class Self_note(Document):
     def to_json(self):
         return {
             "id": str(self.id),
-            "user": self.user,
+            "user": str(self.user.id),
             "title":self.title,
             "notes_content":self.notes_content,
             "date":self.date
