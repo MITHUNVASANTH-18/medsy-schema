@@ -10,7 +10,7 @@ class Layer_3(Document):
     subject = ReferenceField(Subject,required=True,reverse_delete_rule=2)
     year = ReferenceField(Year,required=True,reverse_delete_rule=2)
     layer1 = ReferenceField(Layer_1,required=True,reverse_delete_rule=2)
-    layer2 = ReferenceField(Layer_2,reverse_delete_rule=2)
+    layer2 = ReferenceField(Layer_2,required=True,reverse_delete_rule=2)
     name = StringField(required=True)
     content = StringField(required=True)
     image_url=StringField(required=True)
