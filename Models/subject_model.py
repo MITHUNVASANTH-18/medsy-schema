@@ -12,6 +12,7 @@ class Subject(Document):
     meta_content = StringField()
     has_prompt = BooleanField(required=True)
     key = StringField(required=True,unique=True)
+    has_3_layers = BooleanField()
 
     def clean(self):
         if not self.name.strip():
@@ -30,6 +31,7 @@ class Subject(Document):
             "meta_description":self.meta_description,
             "meta_content":self.meta_content,
             "has_prompt":self.has_prompt,
+            "has_3_layers":self.has_3_layers,
             "key":self.key
         }
     
@@ -44,6 +46,7 @@ class Subject(Document):
             "meta_description":self.meta_description,
             "meta_content":self.meta_content,
             "has_prompt":self.has_prompt,
+            "has_3_layers":self.has_3_layers,
             "key":self.key
         }
         
