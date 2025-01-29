@@ -5,10 +5,10 @@ from Models.layer_1_model import Layer_1
 from Models.year_model import Year
 
 class Layer_2(Document):
-    course = ReferenceField(Course,db_field='course_key',required=True,reverse_delete_rule=2)
-    subject = ReferenceField(Subject,db_field='subject_key',required=True,reverse_delete_rule=2)
-    year = ReferenceField(Year,db_field='year_key',required=True,reverse_delete_rule=2)
-    layer1 = ReferenceField(Layer_1,db_field='layer1_key',required=True,reverse_delete_rule=2)
+    course = ReferenceField(Course,required=True,reverse_delete_rule=2)
+    subject = ReferenceField(Subject,required=True,reverse_delete_rule=2)
+    year = ReferenceField(Year,required=True,reverse_delete_rule=2)
+    layer1 = ReferenceField(Layer_1,required=True,reverse_delete_rule=2)
     name = StringField(required=True)
     meta_title = StringField()
     meta_image_url = StringField()
