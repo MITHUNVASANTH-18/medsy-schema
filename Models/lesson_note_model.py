@@ -1,4 +1,4 @@
-from mongoengine import Document,ReferenceField,DictField
+from mongoengine import Document,ReferenceField,ListField
 from Models.course_model import Course
 from Models.layer_1_model import Layer_1
 from Models.subject_model import Subject
@@ -13,7 +13,7 @@ class Lesson_note(Document):
     layer1 = ReferenceField(Layer_1,reverse_delete_rule=2)
     layer2 = ReferenceField(Layer_2,required=True,reverse_delete_rule=2)
     layer3 = ReferenceField(Layer_3,reverse_delete_rule=2)
-    notes = DictField(required=True)
+    notes = ListField(required=True)
 
     def to_json(self):
         return {
