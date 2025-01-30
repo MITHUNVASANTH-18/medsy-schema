@@ -8,7 +8,7 @@ class Layer_2(Document):
     course = ReferenceField(Course,required=True,reverse_delete_rule=2)
     subject = ReferenceField(Subject,required=True,reverse_delete_rule=2)
     year = ReferenceField(Year,required=True,reverse_delete_rule=2)
-    layer1 = ReferenceField(Layer_1,required=True,reverse_delete_rule=2)
+    layer1 = ReferenceField(Layer_1,reverse_delete_rule=2)
     name = StringField(required=True)
     meta_title = StringField()
     meta_image_url = StringField()
