@@ -18,6 +18,7 @@ class Layer_3(Document):
     meta_content = StringField()
     has_prompt = BooleanField(required=True)
     key = StringField(required=True,unique=True)
+    competency_key = StringField()
 
     def clean(self):
         if not self.name.strip():
@@ -39,7 +40,8 @@ class Layer_3(Document):
             "meta_description":self.meta_description,
             "meta_content":self.meta_content,
             "has_prompt":self.has_prompt,
-            "key":self.key
+            "key":self.key,
+            "competency_key":self.competency_key
         }
     
     def with_key(self):
@@ -56,7 +58,9 @@ class Layer_3(Document):
             "meta_description":self.meta_description,
             "meta_content":self.meta_content,
             "has_prompt":self.has_prompt,
-            "key":self.key
+            "key":self.key,
+            "competency_key":self.competency_key
+
         }
         
     def update(self, **kwargs):
