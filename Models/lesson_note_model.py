@@ -21,7 +21,7 @@ class Lesson_note(Document):
             "course":str(self.course.id) if self.course else None,
             "year":str(self.year.id) if self.year else None,
             "subject":str(self.subject.id) if self.subject else None,
-            "layer1":str(self.layer1.id) if self.layer1 else None,
+            "layer1":str(self.layer1.id) if self.layer1 else "",
             "layer2":str(self.layer2.id) if self.layer2 else None,
             "layer3":str(self.layer3.id) if self.layer3 else None,
             "notes":self.notes
@@ -33,7 +33,7 @@ class Lesson_note(Document):
             "course":self.course.to_json() if self.course else None,
             "year":self.year.to_json() if self.year else None,
             "subject":self.subject.to_json() if self.subject else None,
-            "layer1":self.layer1.to_json() if self.layer1 else None,
+            "layer1":self.layer1.to_json() if self.layer1 else "",
             "layer2":self.layer2.to_json() if self.layer2 else None,
             "layer3":self.layer3.to_json() if self.layer3 else None,
             "notes":self.notes
