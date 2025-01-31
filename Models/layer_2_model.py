@@ -14,7 +14,7 @@ class Layer_2(Document):
     meta_image_url = StringField()
     meta_description = StringField()
     meta_content = StringField()
-    has_prompt = BooleanField(required=True)
+    has_prompt = BooleanField()
     key = StringField(required=True,unique=True)
 
 

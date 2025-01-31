@@ -12,7 +12,7 @@ class Lesson_note(Document):
     subject = ReferenceField(Subject,required=True,reverse_delete_rule=2)
     layer1 = ReferenceField(Layer_1,reverse_delete_rule=2)
     layer2 = ReferenceField(Layer_2,required=True,reverse_delete_rule=2)
-    layer3 = ReferenceField(Layer_3,reverse_delete_rule=2)
+    layer3 = ReferenceField(Layer_3,required=True,reverse_delete_rule=2)
     notes = ListField(required=True)
 
     def to_json(self):
