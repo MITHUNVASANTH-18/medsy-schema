@@ -6,7 +6,7 @@ from Models.layer_2_model import Layer_2
 from Models.layer_3_model import Layer_3
 from Models.year_model import Year
 
-class Short_Notes(Document):
+class ShortNotes(Document):
     course = ReferenceField(Course,required=True,reverse_delete_rule=2)
     year = ReferenceField(Year,required=True,reverse_delete_rule=2)
     subject = ReferenceField(Subject,required=True,reverse_delete_rule=2)
@@ -26,7 +26,7 @@ class Short_Notes(Document):
             "layer2":str(self.layer2.id) if self.layer2 else None,
             "layer3":str(self.layer3.id) if self.layer3 else None,
             "keytype":self.keytype,
-            "short_notes":self.notes
+            "short_notes":self.short_notes
         }
     
     def with_key(self):
@@ -39,5 +39,5 @@ class Short_Notes(Document):
             "layer2":self.layer2.to_json() if self.layer2 else None,
             "layer3":self.layer3.to_json() if self.layer3 else None,
             "keytype":self.keytype,
-            "short_notes":self.notes
+            "short_notes":self.short_notes
         }
