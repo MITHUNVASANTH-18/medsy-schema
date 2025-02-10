@@ -1,4 +1,4 @@
-from mongoengine import Document,ReferenceField,ListField
+from mongoengine import Document,ReferenceField,ListField,StringField
 from Models.course_model import Course
 from Models.layer_1_model import Layer_1
 from Models.subject_model import Subject
@@ -13,6 +13,7 @@ class Short_Notes(Document):
     layer1 = ReferenceField(Layer_1,reverse_delete_rule=2)
     layer2 = ReferenceField(Layer_2,reverse_delete_rule=2)
     layer3 = ReferenceField(Layer_3,reverse_delete_rule=2)
+    keytype = StringField(required=True)
     short_notes = ListField(required=True)
 
     def to_json(self):
@@ -24,6 +25,7 @@ class Short_Notes(Document):
             "layer1":str(self.layer1.id) if self.layer1 else None,
             "layer2":str(self.layer2.id) if self.layer2 else None,
             "layer3":str(self.layer3.id) if self.layer3 else None,
+            "keytype":self.keytype,
             "short_notes":self.notes
         }
     
@@ -36,5 +38,6 @@ class Short_Notes(Document):
             "layer1":self.layer1.to_json() if self.layer1 else None,
             "layer2":self.layer2.to_json() if self.layer2 else None,
             "layer3":self.layer3.to_json() if self.layer3 else None,
+            "keytype":self.keytype,
             "short_notes":self.notes
         }
